@@ -31,7 +31,7 @@ Minecarts that ride smooth, curving tracks. SplinecartUnlocked lets you lay trac
 | --- | --- |
 | Track Ties x8 | 1 stick in the center, wooden slabs around the edges |
 | Track x4 | rail with an iron block above and below |
-| Chain Drive Track x4 | activator rail, chains on the sides, iron blocks above and below |
+| Chain Drive Track x4 | activator rail, iron chains on the sides, iron blocks above and below |
 | Magnetic Track x4 | powered rail, copper blocks on the sides, iron blocks above and below |
 
 ## Configuration
