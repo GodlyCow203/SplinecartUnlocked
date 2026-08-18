@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "splinecartunlocked",
+	"version": "${version}",
+	"name": "SplinecartUnlocked",
+	"description": "Minecart tracks that curve",
+	"authors": [
+		"_GodlyCow"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/splinecartunlocked/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"forked.godlycow.org.splinecartunlocked.SplinecartUnlocked"
+		],
+		"client": [
+			"forked.godlycow.org.splinecartunlocked.SplinecartUnlockedClient"
+		]
+	},
+	"mixins": [
+		"splinecartunlocked.mixins.json",
+		{
+			"config": "splinecartunlocked.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

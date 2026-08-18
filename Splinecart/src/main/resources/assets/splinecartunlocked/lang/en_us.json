@@ -1,0 +1,30 @@
+{
+  "itemGroup.splinecartunlocked": "SplinecartUnlocked",
+
+  "block.splinecartunlocked.track_ties": "Track Ties",
+  "item.splinecartunlocked.track": "Track",
+  "item.splinecartunlocked.chain_drive_track": "Chain Drive Track",
+  "item.splinecartunlocked.magnetic_track": "Magnetic Track",
+
+  "item.splinecartunlocked.track_ties.desc": "Interact to rotate when placed",
+  "item.splinecartunlocked.track.desc": "Links two Track Ties blocks together",
+  "item.splinecartunlocked.chain_drive_track.desc": "Track variant that pulls minecarts",
+  "item.splinecartunlocked.magnetic_track.desc": "Track variant that accelerates or slows minecarts",
+
+  "item.splinecartunlocked.track.origin": "First track selected",
+  "item.splinecartunlocked.track.clear_hint": "Cancel first selection by using on a non-track block",
+
+  "entity.splinecartunlocked.track_follower": "Track Follower",
+
+  "hud.splinecartunlocked.cancel": "[Cancel]",
+  "hud.splinecartunlocked.create_track": "[Create Track]",
+  "hud.splinecartunlocked.right_click": "%s: %s",
+
+  "splinecartunlocked.config.query_value": "Option '%s' is currently '%s'.",
+  "splinecartunlocked.config.set_value": "Option '%s' has been set to '%s'.",
+
+  "splinecartunlocked.config.splinecartunlocked_client.rotate_camera.desc": "Recommended to be set to 'false' for users prone to motion sickness. When set to 'false', your player camera orientation will remain level while riding a non-level SplinecartUnlocked track. Non-level tracks are best experienced in third person when 'rotate_camera' is set to 'false'.",
+  "splinecartunlocked.config.splinecartunlocked_client.vbos.desc": "Use vertex buffer objects to render tracks. Drastically increases performance when enabled, however prone to visual artifacts and compatibility issues.",
+  "splinecartunlocked.config.splinecartunlocked_client.track_resolution.desc": "Higher values decrease performance and increase visual quality. Determines how many segments tracks will be cut into when rendering, with fewer segments making tracks appear jagged. Does not affect minecart movement along tracks.",
+  "splinecartunlocked.config.splinecartunlocked_client.track_render_distance.desc": "When the origin track tie block is this many chunks away from you, its track will stop rendering."
+}

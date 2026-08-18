@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "package": "forked.godlycow.org.splinecartunlocked.mixin.client",
+  "compatibilityLevel": "JAVA_25",
+  "plugin": "forked.godlycow.org.splinecartunlocked.mixin.client.SplinecartUnlockedClientMixinPlugin",
+  "client": [
+    "CameraMixin",
+    "EntityRenderDispatcherMixin",
+    "InGameOverlayRendererMixin",
+    "MinecartInsideSoundInstanceMixin",
+    "MovingMinecartSoundInstanceMixin",
+    "WorldRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

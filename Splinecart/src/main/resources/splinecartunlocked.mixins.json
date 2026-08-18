@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "forked.godlycow.org.splinecartunlocked.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "refmap": "splinecartunlocked.refmap.json",
+  "mixins": [
+    "EntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
