@@ -1,9 +1,9 @@
 package forked.godlycow.org.splinecartunlocked.config;
 
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
+import forked.godlycow.org.splinecartunlocked.util.ChatUtil;
 import net.minecraft.commands.CommandSource;
 import net.minecraft.network.chat.Component;
-import net.minecraft.ChatFormatting;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -33,15 +33,21 @@ public class Config extends ArrayList<ConfigOption<?>> {
                                      opt.<S>commandArg("value").executes(context -> {
                                         opt.setFromCommandAndSave(context, "value");
                                         feedbackSender.accept(context.getSource(),
-                                                Component.translatable(VALUE_SET_KEY, opt.key, opt.get()));
+                                                ChatUtil.prefixed(ChatUtil.styled(
+                                                        Component.translatable(VALUE_SET_KEY, opt.key, opt.get()),
+                                                        ChatUtil.GOOD)));
                                         return 0;
                                     })
                             ).executes(context -> {
                                 var descKey = String.format("splinecartunlocked.config.%s.%s.desc", this.id, opt.key);
                                 feedbackSender.accept(context.getSource(),
-                                        Component.translatable(VALUE_QUERY_KEY, opt.key, opt.get()));
+                                        ChatUtil.prefixed(ChatUtil.styled(
+                                                Component.translatable(VALUE_QUERY_KEY, opt.key, opt.get()),
+                                                ChatUtil.TEXT)));
                                 feedbackSender.accept(context.getSource(),
-                                        Component.translatable(descKey).withStyle(ChatFormatting.GRAY));
+                                        ChatUtil.prefixed(ChatUtil.styled(
+                                                Component.translatable(descKey),
+                                                ChatUtil.DIM)));
                                 return 0;
                             })
             );
@@ -51,7 +57,9 @@ public class Config extends ArrayList<ConfigOption<?>> {
         cmd.executes(context -> {
             for (var opt : this) {
                 feedbackSender.accept(context.getSource(),
-                        Component.translatable(VALUE_QUERY_KEY, opt.key, opt.get()));
+                        ChatUtil.prefixed(ChatUtil.styled(
+                                Component.translatable(VALUE_QUERY_KEY, opt.key, opt.get()),
+                                ChatUtil.TEXT)));
             }
             return 0;
         });

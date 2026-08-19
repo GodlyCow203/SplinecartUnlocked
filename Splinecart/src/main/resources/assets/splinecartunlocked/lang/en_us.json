@@ -23,8 +23,13 @@
   "splinecartunlocked.config.query_value": "Option '%s' is currently '%s'.",
   "splinecartunlocked.config.set_value": "Option '%s' has been set to '%s'.",
 
+  "splinecartunlocked.update.up_to_date": "SplinecartUnlocked is up to date (%s).",
+  "splinecartunlocked.update.outdated": "SplinecartUnlocked %s is available! You are on %s.",
+  "splinecartunlocked.update.error": "Could not check for updates.",
+
   "splinecartunlocked.config.splinecartunlocked_client.rotate_camera.desc": "Recommended to be set to 'false' for users prone to motion sickness. When set to 'false', your player camera orientation will remain level while riding a non-level SplinecartUnlocked track. Non-level tracks are best experienced in third person when 'rotate_camera' is set to 'false'.",
   "splinecartunlocked.config.splinecartunlocked_client.vbos.desc": "Use vertex buffer objects to render tracks. Drastically increases performance when enabled, however prone to visual artifacts and compatibility issues.",
   "splinecartunlocked.config.splinecartunlocked_client.track_resolution.desc": "Higher values decrease performance and increase visual quality. Determines how many segments tracks will be cut into when rendering, with fewer segments making tracks appear jagged. Does not affect minecart movement along tracks.",
-  "splinecartunlocked.config.splinecartunlocked_client.track_render_distance.desc": "When the origin track tie block is this many chunks away from you, its track will stop rendering."
+  "splinecartunlocked.config.splinecartunlocked_client.track_render_distance.desc": "When the origin track tie block is this many chunks away from you, its track will stop rendering.",
+  "splinecartunlocked.config.splinecartunlocked_client.notify_updates.desc": "Show the update status when you join a world. When disabled, you are only notified when an actual update is available."
 }

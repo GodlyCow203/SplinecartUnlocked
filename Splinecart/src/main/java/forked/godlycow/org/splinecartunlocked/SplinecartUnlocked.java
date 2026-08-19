@@ -37,7 +37,8 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 
 public class SplinecartUnlocked implements ModInitializer {
-    public static final Logger LOGGER = LoggerFactory.getLogger("splinecartunlocked");
+    public static final String MOD_ID = "splinecartunlocked";
+    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	public static final TrackTiesBlock TRACK_TIES = SUtil.register(BuiltInRegistries.BLOCK, id("track_ties"),
 			(i, k) -> new TrackTiesBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.RAIL).setId(k)));

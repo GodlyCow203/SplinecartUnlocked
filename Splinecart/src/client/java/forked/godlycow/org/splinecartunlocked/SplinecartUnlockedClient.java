@@ -7,9 +7,11 @@ import forked.godlycow.org.splinecartunlocked.block.entity.TrackTiesBlockEntityR
 import forked.godlycow.org.splinecartunlocked.config.Config;
 import forked.godlycow.org.splinecartunlocked.config.ConfigOption;
 import forked.godlycow.org.splinecartunlocked.util.SUtil;
+import forked.godlycow.org.splinecartunlocked.util.UpdateChecker;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
@@ -28,6 +30,7 @@ public class SplinecartUnlockedClient implements ClientModInitializer {
 	public static final ConfigOption.BooleanOption CFG_VBOS = CONFIG.optBool("vbos", false);
 	public static final ConfigOption.IntOption CFG_TRACK_RESOLUTION = CONFIG.optInt("track_resolution", 3, 1, 16);
 	public static final ConfigOption.IntOption CFG_TRACK_RENDER_DISTANCE = CONFIG.optInt("track_render_distance", 8, 4, 32);
+	public static final ConfigOption.BooleanOption CFG_NOTIFY_UPDATES = CONFIG.optBool("notify_updates", true);
 
 	@Override
 	public void onInitializeClient() {
@@ -47,7 +50,15 @@ public class SplinecartUnlockedClient implements ClientModInitializer {
 					LiteralArgumentBuilder.<FabricClientCommandSource>literal("splinecartc")
 							.then(CONFIG.command(LiteralArgumentBuilder.<FabricClientCommandSource>literal("config"),
 									FabricClientCommandSource::sendFeedback))
+							.then(LiteralArgumentBuilder.<FabricClientCommandSource>literal("update")
+									.executes(context -> {
+										UpdateChecker.checkNow(context.getSource());
+										return 1;
+									}))
 		));
+
+		ClientPlayConnectionEvents.JOIN.register((handler, sender, client) ->
+				UpdateChecker.checkOnJoin());
 
 		HudElementRegistry.addLast(SplinecartUnlocked.id("hud"), new SplinecartUnlockedHud());
 		TrackGeometry.CONSTRUCTOR = ClientTrackGeometry::new;

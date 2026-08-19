@@ -1,17 +1,17 @@
 package forked.godlycow.org.splinecartunlocked;
 
 import forked.godlycow.org.splinecartunlocked.block.TrackTiesBlockEntity;
+import forked.godlycow.org.splinecartunlocked.util.ChatUtil;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElement;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.network.chat.Component;
-import net.minecraft.ChatFormatting;
 import net.minecraft.world.phys.BlockHitResult;
 
 public class SplinecartUnlockedHud implements HudElement {
-    public static final Component CANCEL = Component.translatable("hud.splinecartunlocked.cancel").withStyle(ChatFormatting.RED);
-    public static final Component CREATE = Component.translatable("hud.splinecartunlocked.create_track").withStyle(ChatFormatting.GREEN);
+    public static final Component CANCEL = Component.translatable("hud.splinecartunlocked.cancel").withColor(ChatUtil.ERROR);
+    public static final Component CREATE = Component.translatable("hud.splinecartunlocked.create_track").withColor(ChatUtil.GOOD);
     public static final String RIGHT_CLICK_HINT = "hud.splinecartunlocked.right_click";
 
     @Override
